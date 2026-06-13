@@ -6,8 +6,43 @@ sources:
     schema: ecommerce_raw
     tables:
       - name: orders
+        columns:
+          - name: order_id
+            tests:
+              - not_null
+              - unique
+          - name: customer_id
+            tests:
+              - not_null
+          - name: order_status
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['delivered', 'shipped', 'canceled', 'unavailable', 'invoiced', 'processing', 'created', 'approved']
       - name: customers
+        columns:
+          - name: customer_id
+            tests:
+              - not_null
+              - unique
       - name: products
+        columns:
+          - name: product_id
+            tests:
+              - not_null
+              - unique
       - name: order_items
+        columns:
+          - name: order_id
+            tests:
+              - not_null
       - name: order_payments
+        columns:
+          - name: order_id
+            tests:
+              - not_null
       - name: order_reviews
+        columns:
+          - name: review_id
+            tests:
+              - not_null
