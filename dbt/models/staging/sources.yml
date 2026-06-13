@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: ecommerce_raw
+    database: ecommerce-elt-pipeline
+    schema: ecommerce_raw
+    tables:
+      - name: orders
+      - name: customers
+      - name: products
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews

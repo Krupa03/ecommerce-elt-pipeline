@@ -1,5 +1,9 @@
- with source as (
-    select * from {{ source('ecommerce_raw', 'products') }}
+
+
+  create or replace view `ecommerce-elt-pipeline`.`ecommerce_raw_staging`.`stg_products`
+  OPTIONS()
+  as with source as (
+    select * from `ecommerce-elt-pipeline`.`ecommerce_raw`.`products`
 ),
 
 renamed as (
@@ -17,4 +21,5 @@ renamed as (
     where product_id is not null
 )
 
-select * from renamed
+select * from renamed;
+

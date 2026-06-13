@@ -1,0 +1,5 @@
+google-cloud-bigquery
+pandas-gbq
+db-dtypes
+pandas
+dbt-bigquery

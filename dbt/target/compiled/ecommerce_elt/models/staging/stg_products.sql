@@ -1,5 +1,5 @@
- with source as (
-    select * from {{ source('ecommerce_raw', 'products') }}
+with source as (
+    select * from `ecommerce-elt-pipeline`.`ecommerce_raw`.`products`
 ),
 
 renamed as (
