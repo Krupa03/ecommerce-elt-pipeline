@@ -1,0 +1,12 @@
+ ecommerce_elt:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: ecommerce-elt-pipeline
+      dataset: ecommerce_raw
+      location: US
+      keyfile: /opt/airflow/dbt/service_account.json
+      threads: 4
+      timeout_seconds: 300
