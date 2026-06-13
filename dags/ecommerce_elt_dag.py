@@ -39,6 +39,7 @@ def load_csv_to_bigquery():
         'products': f'{data_path}/olist_products_dataset.csv',
         'order_items': f'{data_path}/olist_order_items_dataset.csv',
         'order_payments': f'{data_path}/olist_order_payments_dataset.csv',
+        'order_reviews': f'{data_path}/olist_order_reviews_dataset.csv',
     }
 
     for table_name, file_path in tables.items():
