@@ -3,3 +3,4 @@ logs/
 .env 
 __pycache__/ 
 dbt/service_account.json 
+dbt/target/ 
