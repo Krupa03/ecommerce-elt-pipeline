@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: int_orders_enriched
+    description: "Orders enriched with customer city, state, and delivery metrics."
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to customers."
+        tests:
+          - not_null
+      - name: delivery_days
+        description: "Number of days between purchase and delivery."
+
+  - name: int_order_details
+    description: "Orders joined with items and payments — aggregated per order."
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order."
+        tests:
+          - not_null
+          - unique
+      - name: total_items
+        description: "Total number of items in the order."
+      - name: total_payment_value
+        description: "Total payment value for the order."

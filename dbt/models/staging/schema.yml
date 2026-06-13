@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staged orders data cleaned and typed from the raw Olist orders dataset."
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order."
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "Foreign key to the customers table."
+        tests:
+          - not_null
+      - name: order_status
+        description: "Current status of the order."
+        tests:
+          - not_null
+
+  - name: stg_customers
+    description: "Staged customers data cleaned from the raw Olist customers dataset."
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_products
+    description: "Staged products data cleaned from the raw Olist products dataset."
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product."
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_order_items
+    description: "Staged order items data with price and freight values."
+    columns:
+      - name: order_id
+        description: "Foreign key to the orders table."
+        tests:
+          - not_null
+
+  - name: stg_reviews
+    description: "Staged order reviews with scores and comments."
+    columns:
+      - name: review_id
+        description: "Unique identifier for each review."
+        tests:
+          - not_null
